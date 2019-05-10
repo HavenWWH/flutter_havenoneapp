@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_havenoneapp/utils/route_util.dart';
+import 'package:flutter_havenoneapp/test/testScreenPage.dart';
+
 
 typedef void CartChangeCallBack(Product product, bool inCart);
 
@@ -77,27 +80,30 @@ class _ShoppingListState extends State<ShoppingList> {
       body: new Container(
         color: Colors.white,
         padding: new EdgeInsets.symmetric(vertical: 8.0),
-        child: new ListView(
-          children: widget.products.map((Product product) {
+        child: new ListView.builder(
+          itemCount: widget.products.length,
+          itemBuilder: (BuildContext context, int index) {
             return new ShoppinglistItem(
-              product: product,
-              inCart: _shoppingCart.contains(product),
+              product: widget.products[index],
+              inCart: _shoppingCart.contains(widget.products[index]),
               onCartChanged: _handleOnChanged,
-            );
-          }).toList(),
+              index: index,
+              );
+            },
+          ),
         ),
-      ),
-    );
+      );
   }
 }
 
 // 商品列表行
 class ShoppinglistItem extends StatelessWidget {
 
-  ShoppinglistItem({Key key, this.product, this.inCart, this.onCartChanged}) : super(key: key);
+  ShoppinglistItem({Key key, this.product, this.inCart, this.onCartChanged, this.index}) : super(key: key);
 
   final Product product;
   final bool inCart;
+  final int index;
   final CartChangeCallBack onCartChanged;
 
   Color _getColor(BuildContext context) {
@@ -160,7 +166,19 @@ class ShoppinglistItem extends StatelessWidget {
       trailing: new RaisedButton(
         color: Colors.cyanAccent,
         onPressed: () {
-          _showAlert(context);
+//          _showAlert(context)
+//          静态路由跳转
+//          Navigator.push(
+//            context,
+//            new MaterialPageRoute(builder: (context) => new Test_screen(index: index,)),
+//          );
+//          Navigator.of(context).pushNamed('/a');
+//          Navigator.of(context).pushNamed('/a/555555').then((value) {
+//
+//            print('$value');
+//          });
+          // 动态路由跳转
+          RouteUtil.routeTestScreenPage(context, index);
         },
         child: new Text(
           product.name,
