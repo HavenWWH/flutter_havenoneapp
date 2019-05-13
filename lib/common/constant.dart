@@ -1,5 +1,6 @@
 
 class Constant {
 
-  static const  String baseUrl="https://news-at.zhihu.com/api/4/";
+  // 接口地址
+  static const  String baseUrl="http://localhost:3000/";
 }

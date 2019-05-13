@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_havenoneapp/utils/http_util.dart';
+import 'package:flutter_havenoneapp/common/api.dart';
+import 'package:flutter_havenoneapp/modules/home/model/banner_model.dart';
 
 class Home_screen extends StatelessWidget{
 
@@ -97,6 +100,34 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
   );
 
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
+  void loadData() {
+
+    HttpUtil.request(
+      Apis.banner,
+      params: {'type' : '2'},
+      callBack: (data) {
+
+        print("success:" + '$data');
+        List banners = data['banners'];
+        List<banner_model> bannerList = banners.map((model) {
+          return banner_model.fromJson(model);
+        }).toList();
+
+        print('banners:' + '$bannerList');
+      },
+      errorCallBack: (errorMsg) {
+
+        print("error:" + errorMsg);
+      }
+    );
+  }
   @override
   Widget build(BuildContext context) {
 
