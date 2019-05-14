@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_havenoneapp/utils/http_util.dart';
 import 'package:flutter_havenoneapp/common/api.dart';
-import 'package:flutter_havenoneapp/modules/home/model/banner_model.dart';
+import 'package:flutter_havenoneapp/modules/discovery/model/banner_model.dart';
 
 class Home_screen extends StatelessWidget{
 

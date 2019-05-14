@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_havenoneapp/modules/business/business_screen.dart';
-import 'package:flutter_havenoneapp/modules/home/home_screen.dart';
-import 'package:flutter_havenoneapp/modules/school/school_screen.dart';
+import 'package:flutter_havenoneapp/modules/video/video_screen.dart';
+import 'package:flutter_havenoneapp/modules/discovery/discovery_screen.dart';
+import 'package:flutter_havenoneapp/modules/friend/friend_screen.dart';
 import 'package:flutter_havenoneapp/modules/my/my_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_havenoneapp/common/constant.dart';
+import 'package:flutter_havenoneapp/modules/account/account_screen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   
@@ -21,20 +23,44 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
   List<BottomNavigationBarItem> _items = [
     BottomNavigationBarItem(
-      icon: new Icon(Icons.home),
-      title: new Text('Home')
+      icon:  new Image.asset(
+        'images/discovery_normal.png',
+        width: 30,
+        height: 30,
+      ),
+      title: new Text('发现')
     ),
     BottomNavigationBarItem(
-      icon: new Icon(Icons.business),
-      title: new Text('business')
+      icon:  new Image.asset(
+        'images/video_normal.png',
+        width: 30,
+        height: 30,
+      ),
+      title: new Text('视频')
     ),
     BottomNavigationBarItem(
-      icon: new Icon(Icons.school),
-      title: new Text('school')
+      icon:  new Image.asset(
+        'images/music_normal.png',
+        width: 30,
+        height: 30,
+      ),
+      title: new Text('我的')
     ),
     BottomNavigationBarItem(
-      icon: new Icon(Icons.person),
-      title: new Text('mine'),
+      icon:  new Image.asset(
+        'images/friend_normal.png',
+        width: 30,
+        height: 30,
+      ),
+      title: new Text('朋友'),
+    ),
+    BottomNavigationBarItem(
+      icon:  new Image.asset(
+        'images/account_normal.png',
+        width: 30,
+        height: 30,
+      ),
+      title: new Text('账号'),
     ),
   ];
 
@@ -51,7 +77,8 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       ..add(Home_screen())
       ..add(Business_screen())
       ..add(School_screen())
-      ..add(My_screen());
+      ..add(My_screen())
+      ..add(Account_screen());
     super.initState();
   }
   
@@ -59,7 +86,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   Widget build(BuildContext context) {
     // 适配
     //设置适配尺寸 (填入设计稿中设备的屏幕尺寸)
-    ScreenUtil.instance = ScreenUtil(width: 375, height: 667)..init(context);
+    ScreenUtil.instance = ScreenUtil(width: 750, height: 1334)..init(context);
     print('设备宽度:${ScreenUtil.screenWidth}');
     print('设备高度:${ScreenUtil.screenHeight}');
     print('设备的像素密度:${ScreenUtil.pixelRatio}');
@@ -74,7 +101,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     return Scaffold(
       body: screenList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.orange,
+        selectedItemColor: Constant.themeColor,
         unselectedItemColor: Colors.black38,
         currentIndex: _currentIndex,
         onTap: _selectItem,

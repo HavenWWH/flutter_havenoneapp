@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'modules/main/bottom_navigation_widget.dart';
 import 'package:flutter_havenoneapp/test/testScreenPage.dart';
-import 'package:flutter_havenoneapp/modules/business/business_screen.dart';
+import 'package:flutter_havenoneapp/modules/video/video_screen.dart';
 
 
 void main() => runApp(MyApp());

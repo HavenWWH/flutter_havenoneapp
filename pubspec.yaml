@@ -54,5 +54,9 @@ flutter:
     - images/kks.jpg
     - images/icon_circle.png
     - images/icon_wx.png
-
+    - images/account_normal.png
+    - images/discovery_normal.png
+    - images/music_normal.png
+    - images/friend_normal.png
+    - images/video_normal.png
 
