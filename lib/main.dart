@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'modules/main/bottom_navigation_widget.dart';
-import 'package:flutter_havenoneapp/test/testScreenPage.dart';
-import 'package:flutter_havenoneapp/modules/video/video_screen.dart';
+import 'package:flutter_neteasecloudmusic/test/testScreenPage.dart';
+import 'package:flutter_neteasecloudmusic/modules/video/video_screen.dart';
+import 'package:flutter_neteasecloudmusic/common/constant.dart';
 
 
 void main() => runApp(MyApp());
@@ -9,7 +10,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
 
   ThemeData theme = ThemeData(
-    primarySwatch: Colors.orange,
+    primarySwatch: Colors.red,
   );
 
   @override

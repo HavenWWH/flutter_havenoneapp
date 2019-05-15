@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:async';
-import 'package:flutter_havenoneapp/common/constant.dart';
+import 'package:flutter_neteasecloudmusic/common/constant.dart';
 
 
 class HttpUtil {

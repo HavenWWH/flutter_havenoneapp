@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_havenoneapp/utils/http_util.dart';
-import 'package:flutter_havenoneapp/common/api.dart';
-import 'package:flutter_havenoneapp/modules/discovery/model/banner_model.dart';
+import 'package:flutter_neteasecloudmusic/utils/http_util.dart';
+import 'package:flutter_neteasecloudmusic/common/api.dart';
+import 'package:flutter_neteasecloudmusic/modules/discovery/model/banner_model.dart';
 
 class Account_screen extends StatelessWidget{
 

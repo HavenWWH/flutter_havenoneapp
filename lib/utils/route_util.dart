@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_havenoneapp/modules/video/video_screen.dart';
-import 'package:flutter_havenoneapp/modules/discovery/discovery_screen.dart';
-import 'package:flutter_havenoneapp/modules/friend/friend_screen.dart';
-import 'package:flutter_havenoneapp/modules/my/my_screen.dart';
-import 'package:flutter_havenoneapp/test/testScreenPage.dart';
+import 'package:flutter_neteasecloudmusic/modules/video/video_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/discovery/discovery_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/friend/friend_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/my/my_screen.dart';
+import 'package:flutter_neteasecloudmusic/test/testScreenPage.dart';
 
 class RouteUtil {
 

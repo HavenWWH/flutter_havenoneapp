@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_havenoneapp/utils/route_util.dart';
-import 'package:flutter_havenoneapp/test/testScreenPage.dart';
+import 'package:flutter_neteasecloudmusic/utils/route_util.dart';
+import 'package:flutter_neteasecloudmusic/test/testScreenPage.dart';
 
 
 typedef void CartChangeCallBack(Product product, bool inCart);
@@ -20,24 +20,24 @@ const List<Product> _productsList = <Product>[
   const Product(name: 'apple'),
 ];
 
-class School_screen extends StatelessWidget{
+class Friend_screen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('School_screen'),),
-      body: SchoolPage(),
+      appBar: AppBar(title: Text('Friend_screen'),),
+      body: FriendPage(),
     );
   }
 }
 
-class SchoolPage extends StatefulWidget {
-  SchoolPage({Key key, this.title}) : super(key: key);
+class FriendPage extends StatefulWidget {
+  FriendPage({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _SchoolPageState createState() => _SchoolPageState();
+  _FriendPageState createState() => _FriendPageState();
 }
 
-class _SchoolPageState extends State<SchoolPage> {
+class _FriendPageState extends State<FriendPage> {
 
   @override
   Widget build(BuildContext context) {

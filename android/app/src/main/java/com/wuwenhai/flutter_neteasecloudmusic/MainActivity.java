@@ -1,4 +1,4 @@
-package com.wuwenhai.flutter_havenoneapp;
+package com.wuwenhai.flutter_neteasecloudmusic;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

@@ -1,4 +1,4 @@
-import 'package:flutter_havenoneapp/utils/date_util.dart';
+import 'package:flutter_neteasecloudmusic/utils/date_util.dart';
 class HotNewsModel {
   final String date;
 

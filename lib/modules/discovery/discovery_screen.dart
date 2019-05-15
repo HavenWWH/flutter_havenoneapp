@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_havenoneapp/utils/http_util.dart';
-import 'package:flutter_havenoneapp/common/api.dart';
-import 'package:flutter_havenoneapp/modules/discovery/model/banner_model.dart';
+import 'package:flutter_neteasecloudmusic/utils/http_util.dart';
+import 'package:flutter_neteasecloudmusic/common/api.dart';
+import 'package:flutter_neteasecloudmusic/modules/discovery/model/banner_model.dart';
 
-class Home_screen extends StatelessWidget{
+class Discovery_screen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: HomeDrawer(),
       appBar: AppBar(
-        title: Text('Home_screen'),
+        title: Text('Discovery_screen'),
       ),
-      body: MyHomePage(title: 'Home'),
+      body: DiscoveryPage(title: 'Discovery'),
     );
   }
 }
 
 // 主函数
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class DiscoveryPage extends StatefulWidget {
+  DiscoveryPage({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _DiscoveryPageState createState() => _DiscoveryPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _DiscoveryPageState extends State<DiscoveryPage> {
 
   Widget titleSection = new Container(
     padding: new EdgeInsets.fromLTRB(10, 10, 10, 0),

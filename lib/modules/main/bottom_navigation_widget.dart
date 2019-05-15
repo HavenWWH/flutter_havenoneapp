@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_havenoneapp/modules/video/video_screen.dart';
-import 'package:flutter_havenoneapp/modules/discovery/discovery_screen.dart';
-import 'package:flutter_havenoneapp/modules/friend/friend_screen.dart';
-import 'package:flutter_havenoneapp/modules/my/my_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/video/video_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/discovery/discovery_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/friend/friend_screen.dart';
+import 'package:flutter_neteasecloudmusic/modules/my/my_screen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_havenoneapp/common/constant.dart';
-import 'package:flutter_havenoneapp/modules/account/account_screen.dart';
+import 'package:flutter_neteasecloudmusic/common/constant.dart';
+import 'package:flutter_neteasecloudmusic/modules/account/account_screen.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   
@@ -21,48 +21,28 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   int _currentIndex = 0;
   List<Widget> screenList = List();
 
-  List<BottomNavigationBarItem> _items = [
-    BottomNavigationBarItem(
-      icon:  new Image.asset(
-        'images/discovery_normal.png',
-        width: 30,
-        height: 30,
+  BottomNavigationBarItem createBottomBarItem(String iconName, String title, double width, double height) {
+    return new BottomNavigationBarItem(
+      icon: new Container(
+        width: width,
+        height: height,
+//        color: Constant.themeColor,
+        child: new Image.asset(iconName),
       ),
-      title: new Text('发现')
-    ),
-    BottomNavigationBarItem(
-      icon:  new Image.asset(
-        'images/video_normal.png',
-        width: 30,
-        height: 30,
-      ),
-      title: new Text('视频')
-    ),
-    BottomNavigationBarItem(
-      icon:  new Image.asset(
-        'images/music_normal.png',
-        width: 30,
-        height: 30,
-      ),
-      title: new Text('我的')
-    ),
-    BottomNavigationBarItem(
-      icon:  new Image.asset(
-        'images/friend_normal.png',
-        width: 30,
-        height: 30,
-      ),
-      title: new Text('朋友'),
-    ),
-    BottomNavigationBarItem(
-      icon:  new Image.asset(
-        'images/account_normal.png',
-        width: 30,
-        height: 30,
-      ),
-      title: new Text('账号'),
-    ),
-  ];
+      title: new Text(title)
+    );
+  }
+
+  List<BottomNavigationBarItem> createItems () {
+    List<BottomNavigationBarItem> itemsss = List();
+    itemsss
+      ..add(createBottomBarItem('images/discovery_normal.png', '发现', 30, 30))
+      ..add(createBottomBarItem('images/video_normal.png', '视频', 30, 30))
+      ..add(createBottomBarItem('images/music_normal.png', '我的', 30, 30))
+      ..add(createBottomBarItem('images/friend_normal.png', '朋友', 30, 30))
+      ..add(createBottomBarItem('images/account_normal.png', '账号', 30, 30));
+    return itemsss;
+  }
 
   void _selectItem(int index) {
     setState(() {
@@ -74,10 +54,10 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   @override
   void initState() {
     screenList
-      ..add(Home_screen())
-      ..add(Business_screen())
-      ..add(School_screen())
+      ..add(Discovery_screen())
+      ..add(Video_screen())
       ..add(My_screen())
+      ..add(Friend_screen())
       ..add(Account_screen());
     super.initState();
   }
@@ -105,7 +85,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         unselectedItemColor: Colors.black38,
         currentIndex: _currentIndex,
         onTap: _selectItem,
-        items: _items,
+        items: createItems(),
         type: BottomNavigationBarType.fixed,
       ),
     );

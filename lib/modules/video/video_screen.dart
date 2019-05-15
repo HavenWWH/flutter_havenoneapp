@@ -18,23 +18,23 @@ const List<Choice> choices = const <Choice>[
 ];
 
 
-class Business_screen extends StatelessWidget{
+class Video_screen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BusinessPage(),
+      body: VideoPage(),
     );
   }
 }
 
-class BusinessPage extends StatefulWidget {
-  BusinessPage({Key key, this.title}) : super(key: key);
+class VideoPage extends StatefulWidget {
+  VideoPage({Key key, this.title}) : super(key: key);
   final String title;
   @override
-  _BusinessPageState createState() => _BusinessPageState();
+  _VideoPageState createState() => _VideoPageState();
 }
 
-class _BusinessPageState extends State<BusinessPage> {
+class _VideoPageState extends State<VideoPage> {
 
   AppBar _homeAppBar = new AppBar(
     backgroundColor: Colors.white,
